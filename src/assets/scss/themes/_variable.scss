@@ -1,29 +1,62 @@
-$c1-200: #2a73dc;
-$c1-300:#2477e5;
-$c1-400: #0c5bc3;
+// đặt riêng để tối ưu code (màu khoảng cách kích thước quan trọng)
 
-$text-xs:12px;
-$text-sm:14px;
+
+$c0:transparent;
+$c1-100: rgb(201, 216, 244);
+$c1-200: rgb(96, 164, 244);
+$c1-300: #2a73dc;
+$c1-400: rgb(42, 115, 221);
+$c2-800: #000; 
+$c3-100: #FFF;
+
+$text-xs: 12px;
+$text-sm: 14px;
 $text-base:16px;
 $text-md:18px;
 $text-lg:20px;
 $text-xl:30px;
 $text-2xl:40px;
+$text-3xl:50px;
+$text-4xl:60px;
+$text-5xl:70px;
 
 $text-light:300;
 $text-regular:400;
 $text-semiBold:600;
 $text-Bold:700;
-// Hàm trong css
 
-// @mixin text() {
-//     font-size: $text-xl;
-//     font-weight: $text-Bold;
-//     color: $c1-300;
-// }
 
-@mixin text($fs,$fw,$c) {
+$kc-1: 4px;
+$kc-2: 8px;
+$kc-3: 16px;
+$kc-4: 24px;
+$kc-5: 48px;
+$percent-5: 5%;
+$percent-10: 10%;
+$percent-25: 25%;
+$percent-50: 50%;
+$percent-75: 75%;
+$percent-100: 100%;
+
+
+//Hàm trong scss 
+@mixin text($fs:$text-base,$fw:$text-regular,$c:$c2-800) {
     font-size: $fs;
     font-weight: $fw;
     color: $c;
+}
+
+@mixin button($bd,$br,$bs,$bg,$pd,$fs,$fw,$c,$bg-hover,$c-hover) {
+    border: $bd;
+    border-radius: $br;
+    box-shadow: $bs;
+    background: $bg;
+    padding: $pd;
+    @include text($fs,$fw,$c);
+    &:hover {
+        background:$bg-hover;
+        color: $c-hover;
+    }
+    cursor: pointer;
+
 }
